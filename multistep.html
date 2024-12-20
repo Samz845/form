@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="multistep.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <main>
+        <div class="steps">
+
+            <!--step 1-->
+          <div class="step active">
+              <div class="num-div"><span class="number">1</span></div>
+
+              <div class="flex-step">
+                 <span>STEP 1</span>
+                 <span>Your Info</span>
+              </div>
+          </div>
+
+          <!--step 2-->
+          <div class="step">
+            <div class="num-div"><span class="number">2</span></div>
+
+            <div class="flex-step">
+                <span>STEP 2</span>
+                <span>Select Plan</span>
+            </div>
+          </div>
+
+          <!--step 3-->
+          <div class="step">
+            <div class="num-div"><span class="number">3</span></div>
+
+            <div class="flex-step">
+                <span>STEP 3</span>
+                <span>ADD-ONS</span>
+            </div>
+          </div>
+
+          <!--step 4-->
+          <div class="step">
+            <div class="num-div"><span class="number">4</span></div>
+
+            <div class="flex-step">
+                <span>STEP 4</span>
+                <span>Summary</span>
+            </div>
+          </div>
+
+          <!--end of step-->
+        </div>
+        
+        <form action="square.html" class="multistep-form" id="multistep-form">
+
+            <!--first form step-->
+            <div class="form-step active">
+                <h2>Personal Info</h2>
+                <p class="info">Please provide your name, email address and phone number</p>
+
+                <div class="input-family">
+                    <label for="username">Name</label>
+                    <input type="text" id="username" placeholder="e.g fatomilola Samuel" name="username">
+                    <span class="error-msg"></span>
+                </div>
+
+                <div class="input-family">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="e.g fatomilolasamuel@outlook.com">
+                    <span class="error-msg"></span>
+                </div>
+
+                <div class="input-family">
+                    <label for="phone">Phone number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="e.g +234 913 657 0987">
+                    <span class="error-msg"></span>
+                </div>
+                
+                <div class="button-container">
+                    <div></div>
+                    <button type="button" class="next" id="next1">Next Step</button>
+                </div>
+            </div>
+
+            <!--second form step-->
+            <div class="form-step" id="form-step-2">
+                <h2>Select your plan</h2>
+                <p class="info">You have the option of monthly and yearly plan</p>
+
+                <div class="plan-options">
+                    <label class="plan">
+                        <div class="icon-div orange">
+                            <i class="fa-solid fa-gamepad"></i>
+                        </div>
+                        <input type="radio" name="plan" value="arcade">
+                        <div class="plan-details">
+                            <span class="plan-name">Arcade</span>
+                            <span class="plan-price">$9/mo</span>
+                        </div>
+                    </label>
+
+                    <label class="plan">
+                        <div class="icon-div orangered">
+                            <i class="fa-solid fa-calculator"></i>
+                        </div>
+                        <input type="radio" name="plan" value="advanced">
+                        <div class="plan-details">
+                            <span class="plan-name">Advanced</span>
+                            <span class="plan-price">$12/mo</span>
+                        </div>
+                    </label>
+
+                    <label class="plan">
+                        <div class="icon-div blue">
+                            <i class="fa-brands fa-discord"></i>
+                        </div>
+                        <input type="radio" name="plan" value="pro">
+                        <div class="plan-details">
+                            <span class="plan-name">Pro</span>
+                            <span class="plan-price">$15/mo</span>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="toggle-wrap">
+                    <span class="monthly">monthly</span>
+                    <label for="toggle">
+                        <input type="checkbox" id="toggle" class="toggle-input">
+                        <div class="toggle-switch"></div>
+                    </label>
+                    <span class="yearly">yearly</span>
+                </div>
+                <div class="button-container"> 
+                  <button type="button" class="prev" id="prev1">Go Back</button>
+                  <button class="next" id="next2" type="button">Next Step</button>
+                </div>
+            </div>
+              <!--end of second form step-->
+                
+              <!--third form step-->
+              <div class="form-step ">
+                  <h2>Pick add-ons</h2>
+                  <p class="info">Add-ons help enhance your gaming experience.</p>
+
+                  <label class="add-on">
+
+                    <div class="flex-add">
+                        <input type="checkbox" id="opt-1" class="check"  name="opt-1" value="Online service">
+                       <div class="flex">
+                          <span class="flex-span" >Online service</span>
+                          <span class="plan-info">Access to mutiplayer games</span>
+                        </div>
+                    </div>
+
+                    <span class="price-tag">$1/mo</span>
+                  </label>
+
+                  <label class="add-on">
+
+                    <div class="flex-add">
+                        <input type="checkbox" id="opt-2" class="check"  name="opt-2" value="Large storage">
+                       <div class="flex">
+                          <span class="flex-span" >Larger storage</span>
+                          <span class="plan-info">Extra 1TB of cloud save</span>
+                       </div>
+                    </div>
+
+                    <span class="price-tag">$2/mo</span>
+                  </label>
+
+                  <label class="add-on">
+
+                   <div class="flex-add">
+                    <input type="checkbox" id="opt-3" class="check" name="opt-3" value="Customizable profile">
+                      <div class="flex">
+                         <span class="flex-span">Customizable profile</span>
+                         <span class="plan-info">Custom theme on your profile</span>
+                      </div>
+                   </div>
+
+                    <span class="price-tag">$2/mo</span>
+                  </label>
+
+                  <div class="button-container"> 
+                    <button type="button" class="prev" id="prev2">Go Back</button>
+                    <button class="next" id="next3" type="button">Next Step</button>
+                  </div>
+              </div>
+               <!--end of third step-->
+              <div class="form-step">
+
+                <h2>Finishing up</h2>
+                <p class="info">Double-check everything looks OK before confirming</p>
+
+                <div class="final">
+                    <div class="final-info">
+                       <div class="flex-output">
+                        <span id="radio-output"></span>
+                        <button type="button" id="change">change</button>
+                       </div>
+
+                       <span class="final-price"></span>
+                    </div>
+                    <hr>
+
+                    <div class="checkbox-output" id="checkbox-output"></div>
+                </div>
+
+                <div class="total">
+                    <span class="total-span">Total:</span>
+                    <span class="total-amount"></span>
+                </div>
+
+                
+                  <div class="button-container">
+                    <button type="button" class="prev">Go Back</button>
+                    <button class="next" type="submit" id="confirm">Confirm</button>
+                  </div>
+               </div>
+               <!--end of 4th step-->
+        </form>
+
+        <div class="message" id="message">
+
+            <svg xmlns="http://www.w3.org/2000/svg" width="60px" height="60px" fill="red" viewBox="0 0 448 512"><!--!Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
+            <h3>Thank you!</h3>
+            <p class="info">
+                Thanks for confirming your subscription! We hope you have fun using our <br>platform.
+                If you ever need support, please feel free to email us at support@sfxgaming.com
+            </p>
+        </div>
+    </main>
+    <script src="multistep.js"></script>
+</body>
+</html>

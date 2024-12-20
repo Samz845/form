@@ -1,0 +1,619 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  background-color: #fff;
+}
+
+main{
+    width: 900px;
+    height: 550px;
+    max-width: 1200px;
+    background-color: #e4f7f8;
+    margin: 200px auto;
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.steps{
+    width: 280px;
+    height: 500px;
+   background: linear-gradient(hsl(213, 96%, 18%),hsl(354, 84%, 57%));
+   padding: 25px;
+   border-radius: 15px;
+}
+
+.step{
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.flex-step{
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+}
+
+.num-div{
+    width: 30px;
+    height: 30px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.num-div .number{
+    font-size: 0.8rem;
+    color: #fff;
+}
+
+.flex-step span:first-of-type{
+    color: hsl(229, 24%, 87%);
+    font-size: 0.8rem;
+}
+
+.flex-step span:last-of-type{
+    color: #fff;
+    font-size: 0.9rem;
+}
+
+.step.active .num-div{
+    background-color: hsl(231, 11%, 63%);
+}
+
+.step.active .number{
+    color: #000;
+}
+
+.info{
+    color: grey;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.multistep-form{
+    width: 500px;
+    margin-left: 50px;
+    margin-top: 30px;
+}
+
+label,input{
+    display: block;
+}
+
+label{
+    margin-bottom: 5px;
+}
+
+.multistep-form input{
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 20px;
+    outline: none;
+    border-radius: 8px;
+    border: 1px solid;
+    background-color: #fff;
+}
+
+.form-step{
+    width: 100%;
+    height: 100%;
+    display: none;
+    padding: 10px;
+}
+
+.form-step.active{
+   display: block;
+}
+
+.form-step .next{
+    color: #fff;
+    width: 100px;
+    height: 30px;
+    border: none;
+    background-color:navy;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.plan-options{
+    width: 100%;
+    display: flex;
+}
+
+.plan{
+    border: 1px solid #000;
+    width: 25%;
+    margin-right: 20px;
+    height: 150px;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.plan input{
+    display: none;
+}
+
+.plan-details{
+    display: flex;
+    flex-direction: column;
+    margin-left: 23px;
+    margin-top: 50px;
+    width: 90px;
+    padding: 5px;
+}
+
+.icon-div{
+    width: 40px;
+    height: 40px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.orange{
+    background-color: orange;
+}
+
+.orangered{
+    background-color: orangered;
+}
+
+.blue{
+    background-color: blue;
+}
+
+i{
+    color: #fff;
+}
+
+.plan-name{
+    font-weight: 700;
+}
+
+.plan-price{
+    font-weight: 500;
+    color: grey;
+}
+
+.plan:has(input:checked) {
+    border:2px solid orange; 
+    
+}
+
+.toggle-wrap{
+    width: 84%;
+    height: 50px;
+    background-color: hsl(229, 24%, 87%);
+    display: flex;
+    margin-top: 20px;
+    align-items: center;
+    gap: 10px;
+    border-radius: 10px;
+}
+
+.toggle-wrap label input{
+    display: none;
+}
+
+.toggle-wrap label{
+    width: 68px;
+    height: 30px;
+    background-color: navy;
+    margin-left: 20px;
+    margin-top: 5px;
+    border-radius: 20px;
+    padding: 0.25em;
+}
+
+.monthly{
+    margin-left: 80px;
+}
+
+.yearly{
+    margin-left:20px ;
+}
+
+.toggle-switch{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #fff;
+    transition: all 0.5s;
+}
+
+.toggle-input:checked ~ .toggle-switch{
+    transform: translateX(calc(60px - 20px));
+}
+
+.form-step .button-container{
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    position: absolute;
+    top: 385px;
+}
+
+.prev{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.form-step .top{
+    margin-top: 50px;
+}
+
+.error-msg{
+    font-size: 1rem;
+    display: block;
+    color: red;
+    margin-top: -20px;
+    margin-bottom: 20px;
+}
+
+.input-family{
+    width: 100%;
+    height: 80px;
+}
+
+.error input{
+    border-color: red;
+}
+
+.success input{
+    border-color: rgb(12, 187, 12);
+}
+
+.add-on {
+    width: 100%;  
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    display: flex;
+    flex-direction: column; 
+    gap: 10px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.flex-add {
+    display: flex;
+    align-items: center; 
+    gap: 8px; 
+    width: 100%; 
+}
+
+.flex {
+    display: flex;
+    flex-direction: column; 
+    gap: 5px; 
+    width: 100%; 
+}
+
+.add-on input[type="checkbox"] {
+    width: 20px; 
+    height: 20px;
+    flex-shrink: 0; 
+}
+
+.plan-info {
+    font-size: 0.7rem; 
+    color: gray;
+}
+
+.price-tag {
+    font-size: 0.85rem; 
+    color: gray;
+    text-align: right; 
+}
+
+.add-on:has(input:checked) {
+    border-color: purple;
+  }
+
+  .final{
+    width: 450px;
+    height: auto;
+    background-color: rgba(211, 211, 211, 0.2);
+    padding: 10px;
+    border-radius: 8px;
+  }
+
+  .flex-output{
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+  }
+
+  .final-info, .checkbox-final{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .final-price{
+    margin-right: 5px;
+    font-weight: 800;
+  }
+
+  .final-info .flex-output span{
+    margin-bottom: 5px;
+    font-weight: 900;
+  }
+
+  #change{
+    background-color: transparent;
+    border: none;
+    margin-left: -60%;
+    cursor: pointer;
+  }
+
+  hr{
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .checkbox-output{
+      margin-top: 10px;
+  }
+
+  .checkbox-final{
+    margin-bottom: 16px;
+  }
+
+  .checkbox-value, .checkbox-price{
+    font-size: 0.8rem;
+  }
+
+  .checkbox-value{
+    color: grey;
+  }
+
+  .checkbox-price{
+    font-weight: 600;
+    color: grey;
+  }
+
+  .total{
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0 0 30px;
+  }
+
+  .total-amount{
+    color: purple;
+    font-weight: 700;
+    font-size: 1.5rem;
+  }
+
+  .message{
+    width: 50%;
+    height: 200px;
+    margin: 160px auto;
+    padding: 10px;
+    display: none;
+  }
+  .message p{
+    font-size: 1.rem;
+  }
+
+  svg{
+    border: 14px solid red;
+    border-radius: 50%;
+    padding: 5px;
+    margin: 0 0 20px 150px;
+  }
+  h3{
+    margin-left: 120px;
+    font-size: 2rem;
+  }
+
+  @media (max-width: 430px){
+    main{
+        flex-direction: column;
+        width: 100%;
+        height: 550px;
+        position: relative;
+        margin: 0;
+    }
+
+    .flex-step{
+        display: none;
+    }
+
+    .steps{
+        display: flex;
+        width: 100vw;
+        margin-left: -18px;
+        margin-top: -20px;
+        justify-content: space-evenly;
+        height: 200px;
+        border-radius: 0;
+    }
+
+    .form-step{
+        background-color: #fff;
+        width: 90%;
+        position: absolute;
+        top: 80px;
+        right: 17px;
+        border-radius: 10px;
+        padding: 10px;
+    }
+
+    .form-step:nth-child(1){
+     height: 390px;
+    }
+
+    .form-step:nth-child(2){
+        height: 440px;
+       }
+
+       .form-step:nth-child(3){
+        height: 425px;
+       }
+
+       .form-step:nth-child(4){
+        height: 360px;
+       }
+      .input-family{
+        margin-bottom: 10px;
+      }
+
+    .input-family input{
+        width: 90%;
+    }
+
+    .input-family label, .input-family input,.error-msg{
+        margin-left: 20px;
+    }
+
+    .plan-options{
+        flex-direction: column;
+    }
+
+    .plan{
+        display: flex;
+        width: 90%;
+        height: 70px;
+        margin-bottom: 10px;
+        margin-left: 15px;
+    }
+
+    .plan-details{
+        margin-top: 0;
+        margin-right:48%;
+    }
+
+    .icon-div{
+        width: 30px;
+        height: 30px;
+        margin-left: 10px;
+        margin-top: 10px;
+    }
+
+    .toggle-wrap{
+        margin-left: 15px;
+        width: 90%;
+    }
+
+    .monthly{
+        margin-left: 35px;
+    }
+
+   .form-step .button-container{
+    position: absolute;
+     top: 390px;
+     left: 20px;
+     width: 90%;
+    }
+
+    body{
+        overflow-x: hidden;
+    }
+
+    .add-on {
+        padding: 8px; 
+        gap: 8px; 
+    }
+
+    .flex-add {
+        flex-direction: row; 
+        align-items: center;
+        gap: 10px; 
+    }
+
+    .flex {
+        flex-direction: column; 
+        gap: 4px; 
+    }
+
+    .price-tag {
+        text-align: left; 
+        margin-top: 5px; 
+        font-size: 0.8rem; 
+    }
+
+    .plan-info {
+        font-size: 0.65rem; 
+    }
+
+    
+    .flex-span{
+        font-size: 0.8rem;
+        font-weight: 700;
+        width: 100%;
+    }
+
+    h2, .info{
+        margin-left: 20px;
+    }
+   .final{
+    width: 90%;
+    height: auto;
+    margin: 0 auto;
+   }
+
+   .flex-output{
+    width: 50%;
+   }
+
+   #change{
+    margin-left:0;
+    width: 50%;
+   }
+
+   .final-price{
+    margin-top: 10px;
+   }
+
+   .checkbox-value{
+    margin-left: 8px;
+   }
+
+   .checkbox-price{
+    margin-right: 8px;
+   }
+
+   .total-amount{
+   margin-right: -15px;
+   }
+
+   .message{
+    position: absolute;
+    top: 100px;
+    left: 20px;
+    border-radius: 10px;
+    width: 90%;
+    margin: 0 auto;
+    background-color: #fff;
+    height: 350px;
+    padding: 30px;
+    text-align: center;
+   }
+
+   .message p{
+     font-size: 0.8rem;
+     line-height: 1.5;
+     margin-left: -10px;
+   }
+   h3,svg{
+    margin-left: 10px;
+   }
+}
